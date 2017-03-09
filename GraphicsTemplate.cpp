@@ -162,6 +162,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	//https://gamedevelopment.tutsplus.com/tutorials/building-a-peer-to-peer-multiplayer-networked-game--gamedev-10074
 
 	//TODO: boardcast and try to find a peer
-		//if found then connect, setup display, take responcibility for some boids or add more boids
-		//else setup local simulation and listen for connections
+
+	//On start, clients add their own boids
+	//Clients control boids on their screen
+	//Clients 'handover' boids when they fly off screen
+	//Clients should only need to talk to next and previous peer
 }

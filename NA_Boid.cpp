@@ -23,6 +23,8 @@ void NA_Boid::update()
 	extern cRenderClass graphics;
 
 	vector<NA_Boid> shortBoidList;
+
+	//TODO: allow boids to see across screens?
 	//find nearby boids and only consider them
 	for (int i = 0; i < BOID_MAX; i++)
 	{
@@ -104,7 +106,7 @@ void NA_Boid::update()
 		}
 	}
 
-	//TODO: LOW: BUG: some boids stop
+	//LOW: BUG: some boids stop
 	//they stop when they interact with other boids
 	//fudge stopped boids
 	if (na_maths.aboutEqual(currentVelocity.length(), 0.0f))
@@ -153,6 +155,7 @@ void NA_Boid::postUpdate()
 	position.y += currentVelocity.y;
 
 
+	//TODO: replace with handover code
 	//screen wrap
 	if (position.x < 0)
 		position.x += SCREEN_WIDTH;
