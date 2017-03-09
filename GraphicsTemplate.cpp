@@ -3,11 +3,17 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 // includes 
 //////////////////////////////////////////////////////////////////////////////////////////
+
+
+#include <WinSock2.h>
+#include <WS2tcpip.h>
+#include "NA_Network.h"
+#include "NA_Thread.h"
 #include <iostream>
 using std::cout;
 #include <tchar.h>
 #include <windows.h>
-#include <WS2tcpip.h>
+
 #include "GL/glut.h"
 #include "globals.h"
 #include "cRenderClass.h"
@@ -17,6 +23,10 @@ using std::vector;
 #include "NA_Boid.h"
 #include "NA_MathsLib.h"
 #include "NA_Timer.h"
+#include "NA_CriticalSection.h"
+
+
+//TODO: multithread boids?
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // externals 
@@ -94,11 +104,11 @@ void update()
 		if (DEBUG_PRINT_POS_OF_ALL_BOIDS || DEBUG_PRINT_POS_OF_FIRST_BOID && i == 0) cout << "pos: " << boidList[i].position.x << " " << boidList[i].position.y << "\n";
 	}
 
-
+	//TODO: check for network messages for boids being added to our screen
 
 	//cout << "updates done, waiting\n";
 
-	extern void debugMouse();
+	//extern void debugMouse();
 	//debugMouse();
 	//cout << "mouse scary? " << graphics.mouseIsScary << "\n";
 	
@@ -168,3 +178,5 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Clients 'handover' boids when they fly off screen
 	//Clients should only need to talk to next and previous peer
 }
+
+

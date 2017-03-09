@@ -18,9 +18,7 @@ NA_Thread::~NA_Thread()
 	requestSelfTerminate();
 	if (threadHandle)
 	{
-		LPDWORD exitCode = getExitCode();
-		if ((DWORD)exitCode == STILL_ACTIVE)
-			WaitForSingleObject(threadHandle, INFINITE);
+		WaitForSingleObject(threadHandle, INFINITE);
 		CloseHandle(threadHandle);
 	}
 	
@@ -49,6 +47,11 @@ bool NA_Thread::waitForTerminate(DWORD milliseconds)
 	DWORD w = WaitForSingleObject(threadHandle, milliseconds);
 	
 	return !(w == WAIT_TIMEOUT); //LOW: Should check for errors https://msdn.microsoft.com/en-us/library/windows/desktop/ms687032(v=vs.85).aspx
+}
+
+bool NA_Thread::isActive()
+{
+	return (DWORD)getExitCode() == STILL_ACTIVE;
 }
 
 

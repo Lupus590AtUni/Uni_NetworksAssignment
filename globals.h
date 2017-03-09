@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "NA_CriticalSection.h"
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -28,3 +28,9 @@ const bool DEBUG_PRINT_POS_OF_ALL_BOIDS = false;
 const float DEBUG_UPDATE_FREQUENCY = 1.0f/FPS_MAX; //override FPS
 
 const int port = 50000;
+
+
+///////////////////////////////////////////////////
+///Multithreading stuff
+//////////////////////////////////////////////////
+NA_CriticalSection consoleOutputCritSect;

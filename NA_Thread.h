@@ -35,6 +35,7 @@ public:
 	void requestSelfTerminate();
 	LPDWORD getExitCode();
 	bool waitForTerminate(DWORD milliseconds = INFINITE);
+	bool isActive();
 };
 
 
