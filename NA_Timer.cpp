@@ -1,6 +1,9 @@
 
 #include "NA_Timer.h"
 #include <time.h>
+#ifdef  _WIN32
+#include <Windows.h>
+#endif
 
 
 
@@ -36,6 +39,8 @@ void NA_Timer::wait()
 {
 	while (!hasElapsed())
 	{
-		//should probably tell the os that we are waiting
+		#ifdef  _WIN32
+			Sleep(250*(duration - difftime(time(NULL), start))); //quarter of a second mulitplied by remianing duration (which is in seconds)
+		#endif
 	}
 }
