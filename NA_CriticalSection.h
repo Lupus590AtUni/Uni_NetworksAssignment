@@ -12,5 +12,6 @@ public:
 	~NA_CriticalSection();
 	void enter();
 	void leave();
+	bool tryEnter();
 };
 

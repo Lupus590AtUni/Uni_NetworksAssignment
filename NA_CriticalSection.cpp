@@ -28,5 +28,10 @@ void NA_CriticalSection::leave()
 	LeaveCriticalSection(&nativeCritSect);
 }
 
+bool NA_CriticalSection::tryEnter()
+{
+	return TryEnterCriticalSection(&nativeCritSect);
+}
+
 
 
