@@ -7,6 +7,7 @@
 using std::cout;
 #include <tchar.h>
 #include <windows.h>
+#include <WS2tcpip.h>
 #include "GL/glut.h"
 #include "globals.h"
 #include "cRenderClass.h"
@@ -113,6 +114,7 @@ void update()
 //////////////////////////////////////////////////////////////////////////////////////////
 // _tmain() - program entry point
 //////////////////////////////////////////////////////////////////////////////////////////
+/*
 int _tmain(int argc, _TCHAR* argv[])
 {	
 	// init glut stuff..
@@ -152,7 +154,14 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	return 0;
 }
+*/
 
 
+int _tmain(int argc, _TCHAR* argv[])
+{
+	//https://gamedevelopment.tutsplus.com/tutorials/building-a-peer-to-peer-multiplayer-networked-game--gamedev-10074
 
-
+	//TODO: boardcast and try to find a peer
+		//if found then connect, setup display, take responcibility for some boids or add more boids
+		//else setup local simulation and listen for connections
+}
