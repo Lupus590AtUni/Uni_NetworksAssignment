@@ -104,7 +104,6 @@
     <ClCompile Include="NA_Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="copy.h" />
     <ClInclude Include="cRenderClass.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="NA_Boid.h" />
