@@ -36,5 +36,3 @@ bool NA_CriticalSection::tryEnter()
 	return TryEnterCriticalSection(&nativeCritSect);
 }
 
-
-

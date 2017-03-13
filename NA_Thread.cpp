@@ -33,11 +33,11 @@ void NA_Thread::requestSelfTerminate()
 LPDWORD NA_Thread::getExitCode()
 {
 	LPDWORD exitCode;
-	if (GetExitCodeThread(threadHandle, exitCode) != 0);
+	if (GetExitCodeThread(threadHandle, exitCode) != 0)
 	{
-		consoleOutputCritSect.enter();
+		NA_consoleOutputCritSect.enter();
 		cerr << "NA_Thread::Destructor - failed to get thread exit code. Error: " << GetLastError() << "\n";
-		consoleOutputCritSect.leave();
+		NA_consoleOutputCritSect.leave();
 	}
 	return exitCode;
 }

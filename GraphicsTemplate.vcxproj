@@ -95,6 +95,7 @@
     <ClCompile Include="NA_LinkedListNode.cpp" />
     <ClCompile Include="NA_MathsLib.cpp" />
     <ClCompile Include="NA_Matrix.cpp" />
+    <ClCompile Include="NA_NetworkManager.cpp" />
     <ClCompile Include="NA_Queue.cpp" />
     <ClCompile Include="NA_Return.cpp" />
     <ClCompile Include="NA_Stack.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="NA_LinkedListNode.h" />
     <ClInclude Include="NA_MathsLib.h" />
     <ClInclude Include="NA_Matrix.h" />
+    <ClInclude Include="NA_NetworkManager.h" />
     <ClInclude Include="NA_Queue.h" />
     <ClInclude Include="NA_Return.h" />
     <ClInclude Include="NA_Stack.h" />

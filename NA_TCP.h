@@ -1,10 +1,9 @@
 #pragma once
-#include "NA_Thread.h"
-#include <WinSock2.h>
-#include <WS2tcpip.h>
+#include "NA_NetworkManager.h"
 
 class NA_TCP : 	public NA_Thread
 {
+	friend class NA_NetworkManager;
 
 public:
 	NA_TCP();

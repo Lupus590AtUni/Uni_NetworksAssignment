@@ -30,7 +30,10 @@ using std::vector;
 #include "NA_CriticalSection.h"
 
 
-//TODO: multithread boids?
+
+
+
+//LOW: multithread boids?
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // externals 
@@ -181,6 +184,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Clients control boids on their screen
 	//Clients 'handover' boids when they fly off screen
 	//Clients should only need to talk to next and previous peer
+
+	
 }
 
 
