@@ -95,12 +95,13 @@
     <ClCompile Include="NA_LinkedListNode.cpp" />
     <ClCompile Include="NA_MathsLib.cpp" />
     <ClCompile Include="NA_Matrix.cpp" />
-    <ClCompile Include="NA_Network.cpp" />
     <ClCompile Include="NA_Queue.cpp" />
     <ClCompile Include="NA_Return.cpp" />
     <ClCompile Include="NA_Stack.cpp" />
+    <ClCompile Include="NA_TCP.cpp" />
     <ClCompile Include="NA_Thread.cpp" />
     <ClCompile Include="NA_Timer.cpp" />
+    <ClCompile Include="NA_UDP.cpp" />
     <ClCompile Include="NA_Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -111,12 +112,13 @@
     <ClInclude Include="NA_LinkedListNode.h" />
     <ClInclude Include="NA_MathsLib.h" />
     <ClInclude Include="NA_Matrix.h" />
-    <ClInclude Include="NA_Network.h" />
     <ClInclude Include="NA_Queue.h" />
     <ClInclude Include="NA_Return.h" />
     <ClInclude Include="NA_Stack.h" />
+    <ClInclude Include="NA_TCP.h" />
     <ClInclude Include="NA_Thread.h" />
     <ClInclude Include="NA_Timer.h" />
+    <ClInclude Include="NA_UDP.h" />
     <ClInclude Include="NA_Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
