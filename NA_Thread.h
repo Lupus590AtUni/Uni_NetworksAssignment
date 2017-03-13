@@ -1,7 +1,11 @@
 #pragma once
 
-#include <windows.h>
-#include "NA_CriticalSection.h"
+//https://msdn.microsoft.com/en-us/library/windows/desktop/ms737629(v=vs.85).aspx
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#include <Windows.h>
+
 
 // http://www.flipcode.com/archives/Simple_Win32_Thread_Class.shtml
 // http://kaisar-haque.blogspot.co.uk/2007/07/c-nice-thread-class_23.html <- mainly used this one

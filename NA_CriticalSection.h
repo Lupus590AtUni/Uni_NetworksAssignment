@@ -1,4 +1,9 @@
 #pragma once
+
+//https://msdn.microsoft.com/en-us/library/windows/desktop/ms737629(v=vs.85).aspx
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
 #include <Windows.h>
 
 class NA_CriticalSection

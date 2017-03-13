@@ -5,9 +5,13 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-#include <WinSock2.h>
-#include <WS2tcpip.h>
-#include "NA_Network.h"
+//https://msdn.microsoft.com/en-us/library/windows/desktop/ms737629(v=vs.85).aspx
+// I think opengl glut may need some window.h stuff, so add this just in case
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+
+
 #include "NA_Thread.h"
 #include <iostream>
 using std::cout;

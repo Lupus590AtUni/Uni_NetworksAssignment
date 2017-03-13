@@ -2,6 +2,10 @@
 #include "NA_Timer.h"
 #include <time.h>
 #ifdef  _WIN32
+//https://msdn.microsoft.com/en-us/library/windows/desktop/ms737629(v=vs.85).aspx
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
 #include <Windows.h>
 #endif
 
