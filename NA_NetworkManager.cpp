@@ -4,6 +4,7 @@
 #include <iostream>
 using std::cerr;
 
+NA_NetworkManager na_networkManager;
 
 NA_NetworkManager::NA_NetworkManager()
 {

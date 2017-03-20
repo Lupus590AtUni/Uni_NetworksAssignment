@@ -16,11 +16,7 @@ class NA_Thread //To make a thread, inherit this class and overload threadFunc, 
 	//code will not exit properly if thread doesn't eventually terminate
 {
 private:
-	bool ready = false;
-	bool terminateRequested = false;
 	
-	HANDLE threadHandle = NULL;
-	LPDWORD threadID;
 	static DWORD WINAPI threadProc(LPVOID lpParameter)
 	{
 		NA_Thread* t = reinterpret_cast<NA_Thread*> (lpParameter);
@@ -29,7 +25,11 @@ private:
 	}
 
 protected:
+	bool terminateRequested = false;
 	virtual DWORD threadFunc() = 0;
+	bool ready = false;
+	HANDLE threadHandle = NULL;
+	LPDWORD threadID;
 
 public:
 	void startThread();
