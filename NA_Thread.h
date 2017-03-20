@@ -11,7 +11,7 @@
 // http://kaisar-haque.blogspot.co.uk/2007/07/c-nice-thread-class_23.html <- mainly used this one
 
 
-class NA_Thread //To make a thread, inherit this class and overload threadFunc, information will need to be global
+class NA_Thread //To make a thread, inherit this class and overload threadFunc, information will need to be global (or within the overloading object)
 	//threads should check if terminateRequested is true and cleanup and return
 	//code will not exit properly if thread doesn't eventually terminate
 {
