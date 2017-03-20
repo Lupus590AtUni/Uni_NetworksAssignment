@@ -4,6 +4,8 @@
 #include <iostream>
 using std::cerr;
 
+//NOTE:scrap and restart?
+//alot of this is TCP
 
 DWORD NA_UDP::threadFunc() //background recive
 {
