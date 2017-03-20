@@ -156,6 +156,7 @@ void NA_Boid::postUpdate()
 
 
 	//TODO: replace with handover code
+		//create new class which inherits and overloads
 	//screen wrap
 	if (position.x < 0)
 		position.x += SCREEN_WIDTH;
