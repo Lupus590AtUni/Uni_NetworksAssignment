@@ -4,7 +4,7 @@
 #include <iostream>
 using std::cerr;
 
-NA_NetworkManager na_networkManager;
+NA_NetworkManager na_netMan;
 
 NA_NetworkManager::NA_NetworkManager()
 {
@@ -33,6 +33,11 @@ bool NA_NetworkManager::init()
 
 	ready = true;
 	return true;
+}
+
+bool NA_NetworkManager::isReady()
+{
+	return ready;
 }
 
 void NA_NetworkManager::cleanup()

@@ -13,15 +13,14 @@ enum NA_NetworkMode { client = 0, sever, };
 class NA_NetworkManager
 {
 private:
-	unsigned int socketCount = 0; 
 	WSADATA wsaData;
 	bool ready = false;
 
 public:
-	
 	NA_NetworkManager();
 	~NA_NetworkManager();
 	bool init();
+	bool isReady();
 	void cleanup();
 };
 
