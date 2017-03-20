@@ -30,7 +30,6 @@ private:
 
 protected:
 	virtual DWORD threadFunc() = 0;
-	void* dataObj = NULL;
 
 public:
 	void startThread();
