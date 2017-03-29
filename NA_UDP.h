@@ -36,7 +36,6 @@ protected:
 public:
 	NA_UDP();
 	~NA_UDP();
-	bool c(string address, string port);
 	bool init();
 	void s(string str);
 	string r();

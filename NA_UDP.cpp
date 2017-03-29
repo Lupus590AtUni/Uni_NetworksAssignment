@@ -39,36 +39,6 @@ NA_UDP::~NA_UDP()
 		closesocket(sock);
 }
 
-bool NA_UDP::c(string address, string port)
-{
-	if (!ready) //should call init first
-		return false;
-
-	addrinfo *addrInfoResult;
-	int result = getaddrinfo(address.c_str, port.c_str, &hints, &addrInfoResult); //looking for all servers which can do what I need
-	if (result != 0)
-	{
-		return false;
-	}
-
-	sock = socket(addrInfoResult->ai_family, addrInfoResult->ai_socktype, addrInfoResult->ai_protocol); //create the socket
-	int result = connect(sock, addrInfoResult->ai_addr, (int)addrInfoResult->ai_addrlen); //attempt to connect to the first result of getaddrinfo
-	
-	//LOW: attempt connecton to other addresses
-	if (result != 0)
-	{
-		closesocket(sock);
-		return false;
-	}
-
-	freeaddrinfo(addrInfoResult);
-	if (sock == INVALID_SOCKET)
-		return false; //had a problem somewhere
-	//else
-	return true; //connection made
-
-}
-
 bool NA_UDP::init()
 {
 	if (!ready)
