@@ -52,7 +52,7 @@ bool NA_UDP::init()
 
 		//na_netMan is ready, do own init
 
-
+		sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
 	}
 	//else already ready
