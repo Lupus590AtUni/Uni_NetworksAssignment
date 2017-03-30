@@ -116,6 +116,7 @@
     <ClInclude Include="NA_MathsLib.h" />
     <ClInclude Include="NA_Matrix.h" />
     <ClInclude Include="NA_Message.h" />
+    <ClInclude Include="NA_MessageDefines.h" />
     <ClInclude Include="NA_NetworkManager.h" />
     <ClInclude Include="NA_PeerListener.h" />
     <ClInclude Include="NA_Queue.h" />
