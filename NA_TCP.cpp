@@ -4,7 +4,7 @@
 #include <iostream>
 using std::cerr;
 
-//NOTE: scrap and restart?
+
 
 DWORD NA_TCP::threadFunc() //background recive
 {
@@ -15,7 +15,7 @@ DWORD NA_TCP::threadFunc() //background recive
 		//TODO: UDP listen for messages and add to queue
 
 
-		recv(sock, recvbuf, recvbuflen, 0);
+		
 	}
 
 	//Do any cleanup

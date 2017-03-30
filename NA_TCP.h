@@ -11,7 +11,7 @@ private:
 	struct addrinfo hints;
 
 	bool ready = false;
-	SOCKET socket = INVALID_SOCKET;
+	SOCKET sock = INVALID_SOCKET;
 	//LOW: if socket becomes invalid
 		//assume that NA_NetworkManager wants to cleanup 
 	DWORD threadFunc(); //background recive
