@@ -31,6 +31,8 @@ using std::vector;
 
 #include "NA_NetworkManager.h"
 
+#include "NA_PeerListener.h"
+
 
 
 
@@ -186,11 +188,36 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 
 	//Set up client listener
+	//create UDP socket
+	SOCKET sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+
+	sockaddr_in	rx_addr;
+	rx_addr.sin_family = AF_INET; // TCPIP
+	rx_addr.sin_port = htons((u_short)atol(DEFAULT_PORT));
+	rx_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+	iResult = bind(sock, (SOCKADDR*)&rx_addr, sizeof(rx_addr));
+
+	NA_PeerListener peerListener;
+
+	peerListener.sock = sock;
+	peerListener.startThread();
 
 
 	//https://gamedevelopment.tutsplus.com/tutorials/building-a-peer-to-peer-multiplayer-networked-game--gamedev-10074
 
 	//TODO: boardcast and try to find a peer
+	struct addrinfo *addressList = NULL;
+	struct addrinfo hints;
+
+	ZeroMemory(&hints, sizeof(hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_DGRAM;
+	hints.ai_protocol = IPPROTO_UDP;
+
+	iResult = getaddrinfo(NULL, DEFAULT_PORT, &hints, &addressList);
+
+	//TODO: go through everything it addressList, connect to each one and ask to join
+
 
 	//On start, clients add their own boids
 	//Clients control boids on their screen
@@ -198,6 +225,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Clients should only need to talk to next and previous peer
 
 
+	peerListener.requestSelfTerminate();
+	peerListener.waitForTerminate();
 	na_netman.cleanup();
 }
 

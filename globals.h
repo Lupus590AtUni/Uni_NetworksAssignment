@@ -1,7 +1,7 @@
 #pragma once
 
 #include "NA_CriticalSection.h"
-
+#include "NA_NetworkManager.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // constants 
@@ -27,8 +27,7 @@ const bool DEBUG_PRINT_POS_OF_FIRST_BOID = false;
 const bool DEBUG_PRINT_POS_OF_ALL_BOIDS = false;
 const float DEBUG_UPDATE_FREQUENCY = 1.0f/FPS_MAX; //override FPS
 
-const unsigned short DEFAULT_PORT = 50000;
-
+const PCSTR DEFAULT_PORT = "50000";
 
 ///////////////////////////////////////////////////
 ///Multithreading stuff

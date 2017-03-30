@@ -1,5 +1,6 @@
 #pragma once
 #include <WinSock2.h>
+#include <WS2tcpip.h>
 enum socketRole { invalid, client, server };
 
 class NA_NetworkManager

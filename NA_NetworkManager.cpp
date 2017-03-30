@@ -45,4 +45,5 @@ void NA_NetworkManager::cleanup()
 	// Tell all objects to terminate
 	// clean up WinSock2
 	WSACleanup();
+	ready = false;
 }
