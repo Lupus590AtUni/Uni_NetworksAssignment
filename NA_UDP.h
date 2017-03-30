@@ -2,6 +2,8 @@
 #include "NA_NetworkManager.h"
 #include "NA_CriticalSection.h"
 #include "NA_Queue.h"
+#include "NA_Thread.h"
+#include "NA_Message.h"
 #include <string>
 using std::string;
 
@@ -11,11 +13,13 @@ class NA_UDP : 	public NA_Thread
 {
 
 private:
-	NA_Queue<string> reciveQueue;
+	NA_Queue<NA_Message> reciveQueue;
 	NA_CriticalSection queueCritSec;
 
+	static const unsigned int bufferLength = 10000;
 	struct addrinfo hints;
 	
+	socketRole sockRole = socketRole::invalid;
 	bool ready = false;
 	SOCKET sock = INVALID_SOCKET;
 	//LOW: if socket becomes invalid
@@ -36,9 +40,9 @@ protected:
 public:
 	NA_UDP();
 	~NA_UDP();
-	bool init();
-	void s(string str);
-	string r();
+	bool init(socketRole role);
+	bool s(NA_Message m);
+	NA_Message r();
 	bool hasMessage(); //returns true when recive func will return a string, false if it will return null
 };
 
