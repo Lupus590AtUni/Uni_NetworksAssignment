@@ -12,7 +12,7 @@
 #endif
 
 
-#include "NA_Thread.h"
+
 #include <iostream>
 using std::cout;
 #include <tchar.h>
@@ -29,6 +29,7 @@ using std::vector;
 #include "NA_Timer.h"
 #include "NA_CriticalSection.h"
 
+#include "NA_NetworkManager.h"
 
 
 
@@ -48,6 +49,7 @@ vector<NA_Boid> boidList; //not really a list
 //////////////////////////////////////////////////////////////////////////////////////////
 void renderScene()
 {
+	//TODO: change for variying number of boids
 	for (int i = 0; i < BOID_MAX; i++)
 	{
 		boidList[i].draw();
@@ -79,6 +81,7 @@ void renderScene()
 //////////////////////////////////////////////////////////////////////////////////////////
 void update()
 {
+	//TODO: change for variying number of boids
 	static bool first = true;
 
 	if (first)
@@ -176,6 +179,15 @@ int _tmain(int argc, _TCHAR* argv[])
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	extern NA_NetworkManager na_netman;
+	if (!na_netman.init())
+	{
+		return false; //network manager failed, winsock not ready
+	}
+
+	//Set up client listener
+
+
 	//https://gamedevelopment.tutsplus.com/tutorials/building-a-peer-to-peer-multiplayer-networked-game--gamedev-10074
 
 	//TODO: boardcast and try to find a peer
@@ -186,7 +198,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Clients should only need to talk to next and previous peer
 
 
-	
+	na_netman.cleanup();
 }
 
 

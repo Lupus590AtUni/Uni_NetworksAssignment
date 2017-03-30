@@ -24,7 +24,7 @@ void NA_Boid::update()
 
 	vector<NA_Boid> shortBoidList;
 
-	//TODO: allow boids to see across screens?
+	//LOW: allow boids to see across screens?
 	//find nearby boids and only consider them
 	for (int i = 0; i < BOID_MAX; i++)
 	{
@@ -71,7 +71,7 @@ void NA_Boid::update()
 	sumPosition.y = sumPosition.y / (shortBoidListSize);
 
 
-	//TODO: if i'm close already maybe i should go slower
+	//LOW: if i'm close already maybe i should go slower
 	NA_Vector temp = NA_Vector::twoPointsIntoVector(position, sumPosition); //modify velocity to head towards the average position
 	
 	temp.scale(BOID_COHESION_WEIGHTING);
@@ -88,7 +88,7 @@ void NA_Boid::update()
 			NA_Vector d = NA_Vector::twoPointsIntoVector(boidList[i].position, position);
 			if (d.length() < BOID_RESPECT_DIST)
 			{
-				newVelocity = d; //TODO: what if near multiple boids?
+				newVelocity = d; //LOW: what if near multiple boids?
 			}
 		}
 	}
@@ -147,7 +147,7 @@ void NA_Boid::postUpdate()
 
 	//if (newVelocity.length() > BOID_SPEED_MAX) cout << "speed limit is poorly enforced\n";
 	
-	currentVelocity = newVelocity; //TODO: Acceleration limit?
+	currentVelocity = newVelocity; //LOW: Acceleration limit?
 	newVelocity = NA_Vector();//prepare vector for next update
 
 	//move
