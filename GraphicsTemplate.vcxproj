@@ -100,6 +100,7 @@
     <ClCompile Include="NA_PeerListener.cpp" />
     <ClCompile Include="NA_Queue.cpp" />
     <ClCompile Include="NA_Return.cpp" />
+    <ClCompile Include="NA_Socket.cpp" />
     <ClCompile Include="NA_Stack.cpp" />
     <ClCompile Include="NA_TCP.cpp" />
     <ClCompile Include="NA_Thread.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="NA_PeerListener.h" />
     <ClInclude Include="NA_Queue.h" />
     <ClInclude Include="NA_Return.h" />
+    <ClInclude Include="NA_Socket.h" />
     <ClInclude Include="NA_Stack.h" />
     <ClInclude Include="NA_TCP.h" />
     <ClInclude Include="NA_Thread.h" />
