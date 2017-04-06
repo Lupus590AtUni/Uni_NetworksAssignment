@@ -7,6 +7,6 @@ private:
 public:
 	NA_Socket2();
 	~NA_Socket2();
-
+	bool init(addrinfo stuff);
 };
 
